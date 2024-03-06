@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose'
 import dotenv from "dotenv";
+import appRouter from './src/routes';
 
 dotenv.config()
 
@@ -19,6 +20,8 @@ if(uri) {
 
 
 const app = express();
+
+app.use('/', appRouter)
 
 app.listen(PORT, () => {
     console.log(`Server listen on port ${PORT} => url : http://localhost:${PORT}`)
