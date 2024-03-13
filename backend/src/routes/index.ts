@@ -1,8 +1,8 @@
 import express from 'express';
-import bookRouter from './book.route';
+import authRouter from './auth.route'
 
 const appRouter = express.Router();
 
-appRouter.use('/books', bookRouter)
+appRouter.use('/auth', authRouter)
 
 export default appRouter;
