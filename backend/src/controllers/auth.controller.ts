@@ -22,6 +22,15 @@ export class AuthController {
         )
     }
 
+    checkToken(req: any, res: Response) {
+        try {
+            res.status(200).send(req.user);
+        } catch (error: any) {
+            console.error(error);
+            res.status(500).send
+        }
+    }
+
     async login(req: Request, res: Response): Promise<void> {
         try {
             const { email, password } = req.body;
